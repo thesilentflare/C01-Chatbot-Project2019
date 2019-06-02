@@ -1,8 +1,8 @@
-–Make sure to have a picture of your team together having lunch/dinner or coffee.  
+**–Make sure to have a picture of your team together having lunch/dinner or coffee.  **
 (Each member inthe team must be visible in the picture and must be together.)  
 
 
-–How did you organize the team?  Which tools did you use, if any?  
+**–How did you organize the team?  Which tools did you use, if any?  **
 We organized the team by collectively assigning duties/tasks to each member or collectively work on parts that require multiple inputs.  
 Invision for mock ups  
 Google Docs to collectively work on and compile all reports before commiting to bitbucket
