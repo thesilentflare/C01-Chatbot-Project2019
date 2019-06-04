@@ -16,9 +16,7 @@ then sent to Apple servers where they run it through multiple machine learning a
 Once it understands the text it will perform its necessary tasks.
  
 **How is ours different?**  
-Our Chatbot is more for corporate use, for those who want to pursue innovations in FinTech, therefore offering more  
-specialized solutions than what is publically available or those who are in need of assistance to build a better  
-foundation for their start-up
+Our Chatbot is more for corporate use, for those who want to pursue innovations in FinTech, therefore offering more specialized solutions than what is publically available or those who are in need of assistance to build a better foundation for their start-up
 
 **If ours is better**  
 **Who is it better for?**  
