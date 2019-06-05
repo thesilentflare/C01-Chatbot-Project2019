@@ -1,6 +1,6 @@
 ChatBot Project
 
-Team 8: (Insert meme team name here)  
+Team 8
 Jeffrey So  
 Gavin Leung  
 Brian Yang  
