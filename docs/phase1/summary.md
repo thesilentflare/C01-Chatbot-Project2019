@@ -1,4 +1,4 @@
-Project Objectives:
+**Project Objectives:**
 
 The objective of this project is to create a single source of reliable information about entering and working in Canada’s
 FinTech sector. The single information hub will allow interested users in government, academic, or cooperate firms, agencies,
@@ -13,13 +13,12 @@ in the database. Information provided to the user should be present with a link 
 Furthermore, users must be able to securely access information and their history of interactions with our system. Users should
 be able to access their information and identify themselves via a login system.
 
-
-Key Users:  
+**Key Users:**  
 The users will be government, NGOs, academia, investors, startups, tech firms and investment firms but also open to academia,
 government agencies, services firms such as legal, consulting, accounting and marketing firms, and importantly, foreign countries
 that are interested in investing in Canada.
 
-Scenarios:
+**Scenarios:**  
 Shari is a 44 year old female foreign investor, working for CD Financials. Shari is a Senior investor with 12 years of experience
 in the field and has recently heard news about the innovative FinTech arising in Canada. Upon stumbling upon Digital Finance
 Institute’s website, Shari wants to get in contact with someone from DFI in order to discuss and learn more about how to gain
