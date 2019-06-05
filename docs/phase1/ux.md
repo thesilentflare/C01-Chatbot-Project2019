@@ -2,6 +2,14 @@
 
 As we are focusing more on the user experience in this initial design many aspects have been simplified to better represent the major important design.
 
+##Logical Flow
+To summarize all of the individual wireframes and how one leads to another, we may look at the following diagram that shows the logical flow:
+
+
+
+Below we have each individual page with a small description of what its purpose is.
+
+
 ##Landing page
 After the user arrives at the main DFI website, they may click on a tab in the navigation bar and are brought to the first page of the Chatbot:
 ![home](/assets/phase1/wireframes/home.png)
@@ -24,3 +32,11 @@ This page shows all top searches by others that also use the service and allows 
 ##Search Results
 This page shows the top relevant hits that either answers the inquiry directly or if no single answer is found, gives the most closely related info to the user to choose from:
 ![results](/assets/phase1/wireframes/searchresults.png)
+
+##Single Result
+
+
+##Saved Searches
+
+
+##Request Representative
