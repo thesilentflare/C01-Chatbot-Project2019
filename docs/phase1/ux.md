@@ -1,13 +1,14 @@
 #UX/UI design
 
 As we are focusing more on the user experience in this initial design many aspects have been simplified to better represent the major important design.
+Namely, the Create Account, Forgotten Password and Account Management pages have been ommitted.
 
 ##Logical Flow
-To summarize all of the individual wireframes and how one leads to another, we may look at the following diagram that shows the logical flow:
+To summarize all of the individual wireframes and how one leads to another, we may look at the following flowchart that shows the logical flow a typical user may take:
+![flowchart](/assets/phase1/wireframes/flowchart.png)
 
 
-
-Below we have each individual page with a small description of what its purpose is.
+Below we have each individual pages with a small description of what its purpose is.
 
 
 ##Landing page
@@ -34,9 +35,5 @@ This page shows the top relevant hits that either answers the inquiry directly o
 ![results](/assets/phase1/wireframes/searchresults.png)
 
 ##Single Result
-
-
-##Saved Searches
-
-
-##Request Representative
+This page will open when the user selects any result from the search results page above. This page loads the relevant info that is selected and allows users to save it to their account.
+![single](/assets/phase1/wireframes/selectedresult.png)
