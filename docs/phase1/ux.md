@@ -36,4 +36,4 @@ This page shows the top relevant hits that either answers the inquiry directly o
 
 ##Single Result
 This page will open when the user selects any result from the search results page above. This page loads the relevant info that is selected and allows users to save it to their account.
-![single](/assets/phase1/wireframes/selectedresults.png)
+![single](/assets/phase1/wireframes/selectedresult.png)
