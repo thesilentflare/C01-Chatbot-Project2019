@@ -22,8 +22,8 @@ Sample Persona 2:
 - 44 year old, female
 - Investor at CD Financials
 - Senior investor with 12 years of experience
-- Married to a senior developer whoâ€™s working at Google 
-- Doesnâ€™t use the latest technologies but has heard of them through her husband
+- Married to a senior developer who’s working at Google 
+- Doesn’t use the latest technologies but has heard of them through her husband
 - Uses Google Assistant from time to time
 - Interested in incorporating new technology into her company
 - Absolute beginner with most complicated sofwares. Does not want hard to learn or hard to use technology. Prefers intuitive software that everyone can pick up easily
@@ -61,8 +61,8 @@ Sample Persona 4:
 - Timely person, very conscious of being on time and completing tasks on time
 - Has OCD
 
-Sample Persaon 5:
-**Philip D'Louie (Master Student and Starup Founder)**
+Sample Persona 5:
+**Philip D'Louie (Master Student and Startup Founder)**
 
 ![PhilipD'Louie](/assets/phase1/personas/PhilipDLouie.png)
 
