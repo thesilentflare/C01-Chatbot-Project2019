@@ -1,5 +1,6 @@
-Sample Persona 1:
-Amber (Academic User)
+Sample Persona 1:\
+**Amber Boba (Academic User)**
+![AmberBoba](/assets/phase1/personas/AmberBoba.png)
 - 21 year old, female
 - attending undergraduate school
 - hired as a co-op intern for 4 months at DFI
@@ -11,17 +12,21 @@ Amber (Academic User)
 - Tasked with web dev of the Chatbot interface
 - Mediocre experience with web dev
 
-Sample Persona 2:
-Shari Zousa(Foreign investors)
+Sample Persona 2:\
+**Shari Zousa (Foreign investors)**
+![ShariZousa](/assets/phase1/personas/ShariZousa.png)
 - 44 year old, female
 - Investor at CD Financials
 - Senior investor with 12 years of experience
 - Married to a senior developer who’s working at Google 
 - Doesn’t use the latest technologies but has heard of them through her husband
 - Uses Google Assistant from time to time
+- Interested in incorporating new technology into her company
+- Does not want hard to learn or hard to use technology. Prefers intuitive software that everyone can pick up easily
 
-Sample Persona 3:
-Woz Lin Luu (Members of Government)
+Sample Persona 3:\
+**Woz Lin Luu (Members of Government)**
+![WozLinLuu](/assets/phase1/personas/WozLinLuu.png)
 - 37 year old, female
 - 5 years of experience as a Member of Parliament
 - Previous 7 years of as a QA Tester at the IT department of the ministries
@@ -29,10 +34,12 @@ Woz Lin Luu (Members of Government)
 - Understands and works with mainstream new technology once in a while during her stay at the IT department
 - Owns an Apple phone and uses Siri for most day to day tasks
 - Owns a Amazon Echo and uses Alexa at home
-- Very rich father that is a very successful entrepreneur
+- Very rich father that is a very successful entrepreneur in the Tech industry
+- A desire to learn more and constantly improve herself
 
-Sample Persona 4:
-Cina Berajy (Business Client)
+Sample Persona 4:\
+**Cina Berajy (Business Client)**
+![CinaBerajy](/assets/phase1/personas/CinaBerajy.png)
 - 53 year old, male
 - Has worked for 7 years at IBM as a manager
 - Beginner user of IBM Watson
@@ -44,4 +51,14 @@ Cina Berajy (Business Client)
 - Timely person, very conscious of being on time and completing tasks on time
 Has OCD
 
-
+Sample Persaon 5:\
+**Philip D'Louie (Master Student and Starup Founder)**
+![PhilipD'Louie](/assets/phase1/personas/PhilipDLouie.png)
+- 26 year old, male
+- Highly knowledgable in the latest technology 
+- Heavily invested in using the latest technology or incorporating it into his startup
+- Extensive knowledge in web development, A.I and machine learning
+- Wants to create a startup with his former manager
+- Graduated from University of Toronto and obtained a Master of Computer Science degree
+- Uses Linux as his primary operating system
+- Owns a Google Pixel and is a heavy user of Google Assistant
