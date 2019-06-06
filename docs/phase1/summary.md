@@ -49,4 +49,4 @@ to remain in the chat he deletes his chat history.
 **Principles:**  
 Our ChatBot product aims to be a standardized hub of information that provides excellent service and the best possible solutions that DFI has to offer,
 equally to all users. Our ChatBot also aims to stay user friendly for non-technically advanced users without detering advanced tech users
-through a sophisticated interface design
+through a sophisticated interface design.
