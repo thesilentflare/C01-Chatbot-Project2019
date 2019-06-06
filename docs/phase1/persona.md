@@ -26,7 +26,7 @@ Sample Persona 2:
 - Doesn’t use the latest technologies but has heard of them through her husband
 - Uses Google Assistant from time to time
 - Interested in incorporating new technology into her company
-- Does not want hard to learn or hard to use technology. Prefers intuitive software that everyone can pick up easily
+- Absolute beginner with most complicated sofwares. Does not want hard to learn or hard to use technology. Prefers intuitive software that everyone can pick up easily
 
 Sample Persona 3:
 **Woz Lin Luu (Members of Government)**
@@ -38,10 +38,12 @@ Sample Persona 3:
 - Previous 7 years of as a QA Tester at the IT department of the ministries
 - Has worked as a Co-op Dev Ops at Oracle
 - Understands and works with mainstream new technology once in a while during her stay at the IT department
+- Aside from mainstream technology, she is inexperienced with most of the other more advance softwares that caters to experts
 - Owns an Apple phone and uses Siri for most day to day tasks
 - Owns a Amazon Echo and uses Alexa at home
 - Very rich father that is a very successful entrepreneur in the Tech industry
 - A desire to learn more and constantly improve herself
+- Wants to know more about various ChatBots and review the pros and cons of introducing them into the government
 
 Sample Persona 4:
 **Cina Berajy (Business Client)**
@@ -53,11 +55,11 @@ Sample Persona 4:
 - Beginner user of IBM Watson
 - Wants an easier way to use ChatBot for his department
 - Over 20 years of work experience in the management position 
-- Invested in new technologies in his free time
+- Loves reading and using new technologies in his free time as a hobby
 - Loves open source 
 - Very active in his company, participates and creates a variety of events for his employees
 - Timely person, very conscious of being on time and completing tasks on time
-Has OCD
+- Has OCD
 
 Sample Persaon 5:
 **Philip D'Louie (Master Student and Starup Founder)**
@@ -65,10 +67,10 @@ Sample Persaon 5:
 ![PhilipD'Louie](/assets/phase1/personas/PhilipDLouie.png)
 
 - 26 year old, male
+- Graduated from University of Toronto and obtained a Master of Computer Science degree
+- Startup founder alongside his former manager
 - Highly knowledgable in the latest technology 
 - Heavily invested in using the latest technology or incorporating it into his startup
 - Extensive knowledge in web development, A.I and machine learning
-- Wants to create a startup with his former manager
-- Graduated from University of Toronto and obtained a Master of Computer Science degree
 - Uses Linux as his primary operating system
 - Owns a Google Pixel and is a heavy user of Google Assistant
