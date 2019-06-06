@@ -1,4 +1,4 @@
-Sample Persona 1:\
+Sample Persona 1:
 **Amber Boba (Academic User)**
 ![AmberBoba](/assets/phase1/personas/AmberBoba.png)
 - 21 year old, female
@@ -12,7 +12,7 @@ Sample Persona 1:\
 - Tasked with web dev of the Chatbot interface
 - Mediocre experience with web dev
 
-Sample Persona 2:\
+Sample Persona 2:
 **Shari Zousa (Foreign investors)**
 ![ShariZousa](/assets/phase1/personas/ShariZousa.png)
 - 44 year old, female
@@ -24,7 +24,7 @@ Sample Persona 2:\
 - Interested in incorporating new technology into her company
 - Does not want hard to learn or hard to use technology. Prefers intuitive software that everyone can pick up easily
 
-Sample Persona 3:\
+Sample Persona 3:
 **Woz Lin Luu (Members of Government)**
 ![WozLinLuu](/assets/phase1/personas/WozLinLuu.png)
 - 37 year old, female
@@ -37,7 +37,7 @@ Sample Persona 3:\
 - Very rich father that is a very successful entrepreneur in the Tech industry
 - A desire to learn more and constantly improve herself
 
-Sample Persona 4:\
+Sample Persona 4:
 **Cina Berajy (Business Client)**
 ![CinaBerajy](/assets/phase1/personas/CinaBerajy.png)
 - 53 year old, male
@@ -51,7 +51,7 @@ Sample Persona 4:\
 - Timely person, very conscious of being on time and completing tasks on time
 Has OCD
 
-Sample Persaon 5:\
+Sample Persaon 5:
 **Philip D'Louie (Master Student and Starup Founder)**
 ![PhilipD'Louie](/assets/phase1/personas/PhilipDLouie.png)
 - 26 year old, male
