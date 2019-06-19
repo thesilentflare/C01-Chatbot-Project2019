@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import Landing from '../Main/Landing'
-import Login from '../Main/Login'
-import CreateAcc from '../Main/CreateAcc'
-import Guest from '../Main/Guest'
+import Login from '../Main/Login/Login'
+import CreateAcc from '../Main/CreateAcc/CreateAcc'
+import Guest from '../Main/Guest/Guest'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
