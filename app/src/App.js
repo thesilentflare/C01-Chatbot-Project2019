@@ -1,6 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import Landing from './Landing'
+import Login from './Login'
+import CreateAcc from './CreateAcc'
+import Guest from './Guest'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -8,16 +11,16 @@ function App() {
 
 
     <div className="App">
-    {/*<Router>
+    <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path = "/apply" component={Apply} />
-          <Route exact path = "/team" component={Team} />
-          <Route path = "/Student" component={Student} />
-          <Route path = "/form" component={Form} />
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/guest" component={Guest} />
+          <Route exact path = "/login" component={Login} />
+          <Route exact path = "/create" component={CreateAcc} />
+          {/*<Route path = "/Student" component={Student} />
+          <Route path = "/form" component={Form} />*/}
         </Switch>
-      </Router>*/}
+      </Router>
     </div>
   );
 }

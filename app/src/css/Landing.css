@@ -1,0 +1,47 @@
+html, body {
+
+}
+.wrapper{
+
+}
+
+h1{
+  font-size: 5em;
+  margin-bottom: 0;
+}
+
+h2{
+  margin-top: 0;
+  margin-bottom: 2em;
+  font-size: 2.65em;
+}
+.nav{
+  padding: 0 38%;
+}
+.nav ul{
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  padding-top: 1em;
+}
+.nav li{
+  padding: 0.65em;
+}
+.nav button{
+  background-color: #00b1bd;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  border-radius: 50px;
+  width: 100%;
+  margin-bottom: 0.65em;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
