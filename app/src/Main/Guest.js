@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 
 
-class CreateAcc extends Component {
+class Guest extends Component {
   render() {
     return (
       <div className="">
-      CreateAcc
+      Guest Access
       </div>
 
 
     );
   }
 }
-export default CreateAcc;
+export default Guest;

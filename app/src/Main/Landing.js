@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
-import './css/Landing.css'
+import './Landing.css'
 
 
 class Landing extends Component {
@@ -12,9 +12,9 @@ class Landing extends Component {
 
         <div className="nav">
           <ul>
-            <li><button><NavLink to="/Guest">Use As Guest</NavLink></button></li>
-            <li><button><NavLink to="/Login">Login</NavLink></button></li>
-            <li><button><NavLink to="/Create">Create An Account</NavLink></button></li>
+            <li><NavLink to="/Guest"><button>Proceed As Guest</button></NavLink></li>
+            <li><NavLink to="/Login"><button>Login</button></NavLink></li>
+            <li><NavLink to="/Create"><button>Create An Account</button></NavLink></li>
           </ul>
         </div>
 

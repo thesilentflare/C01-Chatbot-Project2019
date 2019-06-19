@@ -1,6 +1,7 @@
 html, body {
 
 }
+
 .wrapper{
 
 }
@@ -15,9 +16,11 @@ h2{
   margin-bottom: 2em;
   font-size: 2.65em;
 }
+
 .nav{
   padding: 0 38%;
 }
+
 .nav ul{
   list-style-type: none;
   display: block;
@@ -25,13 +28,15 @@ h2{
   padding: 0;
   padding-top: 1em;
 }
+
 .nav li{
   padding: 0.65em;
 }
+
 .nav button{
   background-color: #00b1bd;
   border: none;
-  color: white;
+  color: black;
   padding: 20px;
   text-align: center;
   text-decoration: none;
@@ -40,7 +45,9 @@ h2{
   border-radius: 50px;
   width: 100%;
   margin-bottom: 0.65em;
+  outline: none;
 }
+
 a{
   text-decoration: none;
   color: black;
