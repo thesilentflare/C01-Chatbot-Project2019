@@ -4,6 +4,7 @@
 Express.js v4.17.1
 Node.js v8.9.4
 MySQL v2.17.1
+MySQL2 v1.6.5
 Sequelize v5.8.11
 Sequelize-cli v5.5.0
 
