@@ -3,10 +3,10 @@
 *******/
 
 const _ = require('lodash');
+const config = require('./config.json');
+const defaultConfig = config.local;
 const env = process.env.NODE_ENV || 'local';
-const envConfig = require('./' + env);
-let defaultConfig = {
-  env: env
-};
+const envConfig = config[env];
+
 
 module.exports = _.merge(defaultConfig, envConfig);

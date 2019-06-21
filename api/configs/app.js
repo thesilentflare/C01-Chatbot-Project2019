@@ -13,9 +13,8 @@ const app = express()
  */
 const init = (config) => {
 	// set all the server things
-	app.set('env', config.env);
 	app.set('port', config.port);
-	app.set('hostname', config.hostname);
+	app.set('hostname', config.host);
 }
 
 /**
@@ -25,7 +24,7 @@ const start = async () => {
 	const hostname = app.get('hostname');
 	const port = app.get('port');
 	await promisify(app.listen).bind(app)(port)
-	console.log(`Express server listening on - http:// ${hostname} : ${port}`);
+	console.log(`Express server listening on - http://${hostname}:${port}`);
 }		    
    
 module.exports = {
