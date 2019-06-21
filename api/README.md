@@ -3,6 +3,8 @@
 ## Versions
 Express.js v4.17.1
 Node.js v8.9.4
+MySQL v2.17.1
+Sequelize v5.8.11
 
 
 ## Local Development Setup
