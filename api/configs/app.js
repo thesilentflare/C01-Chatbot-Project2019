@@ -8,10 +8,11 @@ const { promisify } = require('util');
 const app = express()
 
 /**
- * Setup server details from congif infomation
+ * Setup server details from congif database infomation 
  * @param config - object containing config infromation
+ * @param db - object containing database information
  */
-const init = (config) => {
+const init = (config, db) => {
 	// set all the server things
 	app.set('port', config.port);
 	app.set('hostname', config.host);
