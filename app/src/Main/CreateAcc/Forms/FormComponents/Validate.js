@@ -12,6 +12,8 @@ const Validate = (value, rules) => {
 
         case 'isToken': isValid = isValid && tokenValidator(value); break;
 
+        case 'isGender': isValid = isValid && genderValidator(value); break;
+
       	default: isValid = true;
     }
 
@@ -52,7 +54,16 @@ const emailValidator = value => {
     return re.test(String(value).toLowerCase());
 }
 
-const tokenValidator = value =>{
+const genderValidator = value => {
+  if (String(value) === '-'){
+    return false;
+  }
+  else{
+    return true;
+  }
+}
+
+const tokenValidator = value => {
   //Test the given token
   return true;
 }

@@ -7,6 +7,21 @@ class UserForm extends Component {
     this.state = {
       formIsValid: false,
       formControls: {
+        gender: {
+          value: '',
+          placeholder: 'What is your gender',
+          valid: false,
+          touched: false,
+          validationRules: {
+            isRequired: true,
+            isGender: false
+          },
+          options: [
+            { value: '-', displayValue: 'Choose Gender' },
+            { value: 'male', displayValue: 'Male' },
+            { value: 'female', displayValue: 'Female'}
+          ]
+        },
         firstname: {
           value: '',
           placeholder: 'Firstname',
@@ -46,19 +61,6 @@ class UserForm extends Component {
             minLength: 8
           },
           touched: false
-        },
-        gender: {
-          value: '',
-          placeholder: 'What is your gender',
-          valid: false,
-          touched: false,
-          validationRules: {
-            isRequired: true,
-          },
-          options: [
-            { value: 'male', displayValue: 'Male' },
-            { value: 'female', displayValue: 'Female'}
-          ]
         },
         purpose: {
           value: '',
