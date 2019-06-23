@@ -43,6 +43,18 @@ var Admin = database.define("admins",{
   adminToken: {
     type: Sequelize.STRING(30),
     allowNull: false,
+  },
+  password: {
+    type: Sequelize.STRING(32),
+    allowNull: false
+  },
+  firstname: {
+    type: Sequelize.STRING(30),
+    allowNull: false,
+  },
+  lastname: {
+    type: Sequelize.STRING(30),
+    allowNull: false,
   }
 });
 
@@ -60,27 +72,20 @@ var Index = database.define("index",{
 });
 
 database.sync().then(function() {
-  User.create({
-    username:"admin",
+  Admin.create({
+    email:"admin@mail.utoronto.ca",
     password:"admin",
-    gender:"M",
     firstname:"ad",
     lastname:"min",
-    email:"admin@mail.utoronto.ca",
-    reason:"I want to add to chatbot index"
+    adminToken:"ASDFFASDFASDFA"
   }),
   User.create({
-    username:"user",
+    email:"user@mail.utoronto.ca",
     password:"user",
     gender:"F",
     firstname:"us",
     lastname:"er",
-    email:"user@mail.utoronto.ca",
     reason:"I want to use chatbot"
-  }),
-  Admin.create({
-    email:"admin@mail.utoronto.ca",
-    adminToken:"OPWIFQNASDLFAPOIEW"
   }),
   Index.create({
     indexName: "chatbot",
