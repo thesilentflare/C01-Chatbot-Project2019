@@ -3,19 +3,21 @@
 *********/
 const express = require('express');
 const { promisify } = require('util');
+const RoutesUtil = require('../routes/index.js');
 
 // Get express object
 const app = express()
 
 /**
- * Setup server details from congif infomation
+ * Setup server details from congif database infomation 
  * @param config - object containing config infromation
+ * @param db - object containing database information
  */
-const init = (config) => {
+const init = (config, db) => {
 	// set all the server things
-	app.set('env', config.env);
 	app.set('port', config.port);
-	app.set('hostname', config.hostname);
+	app.set('hostname', config.host);
+	RoutesUtil.initRoutes(app);
 }
 
 /**
@@ -25,7 +27,7 @@ const start = async () => {
 	const hostname = app.get('hostname');
 	const port = app.get('port');
 	await promisify(app.listen).bind(app)(port)
-	console.log(`Express server listening on - http:// ${hostname} : ${port}`);
+	console.log(`Express server listening on - http://${hostname}:${port}`);
 }		    
    
 module.exports = {
