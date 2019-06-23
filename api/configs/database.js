@@ -59,18 +59,6 @@ var Admin = database.define("admins",{
 });
 
 
-var Index = database.define("index",{
-  indexName: {
-    type: Sequelize.STRING(20),
-    allowNull: false,
-    unique: true
-  },
-  urls: {
-    type: Sequelize.JSON, //Sequelize doesnt allow arrays for mySQL
-    allowNull: false
-  }
-});
-
 database.sync().then(function() {
   Admin.create({
     email:"admin@mail.utoronto.ca",
@@ -86,9 +74,5 @@ database.sync().then(function() {
     firstname:"us",
     lastname:"er",
     reason:"I want to use chatbot"
-  }),
-  Index.create({
-    indexName: "chatbot",
-    urls: ["chatbot.com", "chatbot.com/help","chatbot.com/info"]
   })
 });
