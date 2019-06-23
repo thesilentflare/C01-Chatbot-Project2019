@@ -4,7 +4,7 @@ const defaultConfig = config.development;
 
 const database = new Sequelize(defaultConfig);
 
-var User = database.define("user",{
+  var User = database.define("user",{
   email: {
     type: Sequelize.STRING(150),
     allowNull: false,
@@ -41,7 +41,7 @@ var Admin = database.define("admins",{
     unique: true
   },
   adminToken: {
-    type: Sequelize.STRING(10),
+    type: Sequelize.STRING(30),
     allowNull: false,
   }
 });
@@ -54,14 +54,36 @@ var Index = database.define("index",{
     unique: true
   },
   urls: {
-    type: Sequelize.ARRAY(Sequelize.STRING(200)),
+    type: Sequelize.JSON, //Sequelize doesnt allow arrays for mySQL
     allowNull: false
   }
 });
 
-/*database.sync().then(function() {
+database.sync().then(function() {
   User.create({
     username:"admin",
-    password:"admin"
-  });
-})*/
+    password:"admin",
+    gender:"M",
+    firstname:"ad",
+    lastname:"min",
+    email:"admin@mail.utoronto.ca",
+    reason:"I want to add to chatbot index"
+  }),
+  User.create({
+    username:"user",
+    password:"user",
+    gender:"F",
+    firstname:"us",
+    lastname:"er",
+    email:"user@mail.utoronto.ca",
+    reason:"I want to use chatbot"
+  }),
+  Admin.create({
+    email:"admin@mail.utoronto.ca",
+    adminToken:"OPWIFQNASDLFAPOIEW"
+  }),
+  Index.create({
+    indexName: "chatbot",
+    urls: ["chatbot.com", "chatbot.com/help","chatbot.com/info"]
+  })
+});
