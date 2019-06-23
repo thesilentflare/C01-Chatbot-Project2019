@@ -1,6 +1,7 @@
 # API Documentaiton
 
 ## Versions
+Bcrypt v3.0.6
 Express.js v4.17.1
 Node.js v8.9.4
 MySQL v2.17.1
