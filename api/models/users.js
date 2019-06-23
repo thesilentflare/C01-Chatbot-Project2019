@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize) => {
     const User = sequelize.define('author', {
         id: {
           type: Sequelize.INTEGER,
@@ -17,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         email: {
           type: Sequelize.STRING(50),
+          validate: {
+            isEmail: true,
+          },
           allowNull: false,
           unique: true
         },
