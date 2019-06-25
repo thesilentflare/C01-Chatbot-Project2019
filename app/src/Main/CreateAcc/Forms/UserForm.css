@@ -1,0 +1,12 @@
+.usercomponents{
+}
+
+.form-select{
+    margin-bottom:10px;
+}
+
+.name{
+    margin-left:25%;
+    display: flex;
+    flex-wrap: wrap;
+}
