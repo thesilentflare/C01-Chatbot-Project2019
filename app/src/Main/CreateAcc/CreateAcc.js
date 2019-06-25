@@ -35,7 +35,7 @@ class CreateAcc extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="mainpage">
         Create Account Page
 
         <select className="acctype" onChange={this.changeForm} value={this.state.acctype}>

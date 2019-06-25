@@ -9,7 +9,7 @@ const Password = props => {
     }
 
     return (
-        <div className="form-group">
+        <div className="form-pass">
             <input type="password" className={formControl} {...props} />
         </div>
     );

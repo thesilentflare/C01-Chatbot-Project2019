@@ -39,7 +39,7 @@ class AdminForm extends Component {
         },
         password: {
           value: '',
-          placeholder: 'Password',
+          placeholder: 'Password (min 8 characters)',
           valid: false,
           validationRules: {
             isRequired: true,
@@ -105,7 +105,7 @@ class AdminForm extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="formcomponents">
         <comp.TextInput name="firstname"
                      placeholder={this.state.formControls.firstname.placeholder}
                      value={this.state.formControls.firstname.value}
