@@ -7,10 +7,11 @@ class Query extends Component {
     super();
     this.state = {
       formIsValid: false,
+      toggleIBM: true,
       formControls:{
         searchbar: {
           value: '',
-          placeholder: 'start typing here',
+          placeholder: 'ask here',
           valid: false,
           validationRules: {
             isRequired: true,
@@ -60,13 +61,30 @@ class Query extends Component {
   	}
     for (var data in formData){
       alert(formData[data]); //testing each value sent
+      // sent to message logging pool?
     }
+
+    //clear input field
+    this.setState({
+      formControls:{
+        searchbar:{
+          value: '',
+          placeholder: 'ask here'
+        }
+      }
+    })
+  }
+
+  toggleIBM = () =>{
+    alert(this.state.toggleIBM);
+    console.log("clicked");
+    this.setState(prevState =>({
+      toggleIBM: !prevState.toggleIBM
+    }));
   }
 
 
-
   render(){
-
     return(
       <div className="">
       Query
@@ -82,6 +100,15 @@ class Query extends Component {
       >
         Send
       </button>
+      <comp.Slider onClick={this.toggleIBM} checked={this.state.toggleIBM}
+
+        />
+      {/* use following to show ibm results*/}
+      { this.state.toggleIBM ?
+        <div>
+        SHOWING IBM STUFF
+
+        </div> : null }
       </div>
     );
   }
