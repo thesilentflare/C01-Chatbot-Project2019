@@ -84,7 +84,7 @@ class Login extends Component {
 
   render() {
     if (this.state.redirectQuery === true) {
-      return <Redirect to='/Guest' />
+      return <Redirect to='/Query' />
     }
     else if (this.state.redirectForgot === true) {
       return <Redirect to='/Forgot' />

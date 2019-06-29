@@ -4,6 +4,8 @@ import Landing from '../Main/Landing'
 import Login from '../Main/Login/Login'
 import CreateAcc from '../Main/CreateAcc/CreateAcc'
 import Guest from '../Main/Guest/Guest'
+import Query from '../Main/Query/Query'
+import ForgotPass from '../Main/Forgot/Forgot'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Route exact path="/Guest" component={Guest} />
           <Route exact path = "/Login" component={Login} />
           <Route exact path = "/Create" component={CreateAcc} />
+          <Route exact path = "/Forgot" component={ForgotPass} />
+          <Route exact path = "/Query" component={Query} />
           {/*<Route path = "/Student" component={Student} />
           <Route path = "/form" component={Form} />*/}
         </Switch>
