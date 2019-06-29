@@ -8,7 +8,8 @@ class Login extends Component {
     super();
     this.state = {
       formIsValid: false,
-      redirect: false,
+      redirectQuery: false,
+      redirectForgot: false,
       formControls: {
         email: {
           value: '',
@@ -73,19 +74,22 @@ class Login extends Component {
       }
 
       if (true){
-        this.setState({redirect: true}); //send data to server, check then set to true
+        this.setState({redirectQuery: true}); //send data to server, check then set to true
       }
     }
 
-  renderRedirect = () => {
-    return <Redirect to='/guest' />
+  redirectForgot = () => {
+    this.setState({redirectForgot: true});
   }
 
-
   render() {
-    if (this.state.redirect === true) {
-      return <Redirect to='/guest' />
+    if (this.state.redirectQuery === true) {
+      return <Redirect to='/Guest' />
     }
+    else if (this.state.redirectForgot === true) {
+      return <Redirect to='/Forgot' />
+    }
+
     return (
       <div className="">
       Login
@@ -109,8 +113,10 @@ class Login extends Component {
       >
         Login
       </button>
-
-
+      <button onClick={this.redirectForgot}
+      >
+        Forgot Password
+      </button>
       </div>
 
 
