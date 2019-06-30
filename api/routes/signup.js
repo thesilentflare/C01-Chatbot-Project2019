@@ -6,7 +6,6 @@ router.post('/', function (req, res) {
     console.log(req);
     const signUp = new SignUpController(req, res);
     signUp.addUser();
-    //res.send('Login');
 });
 
 module.exports = router
