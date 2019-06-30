@@ -1,39 +1,48 @@
-const Sequelize = require('sequelize');
-
-module.exports = (sequelize) => {
-    const User = sequelize.define('author', {
+module.exports = (sequelize, type) => {
+    const User = sequelize.define('user', {
         id: {
-          type: Sequelize.INTEGER,
-          primaryKey: true,
+          type: type.INTEGER,
           autoIncrement: true
         },
         firstName: {
-          type: Sequelize.STRING(20),
+          type: type.STRING(20),
           allowNull: false,
         },
         lastName: {
-          type: Sequelize.STRING(20),
+          type: type.STRING(20),
           allowNull: false,
         },
+        gender: {
+          type: type.CHAR(1),
+          allowNull: true,
+          validate: {
+            is: ["[fm]",'i']
+          }
+        },
         email: {
-          type: Sequelize.STRING(50),
+          type: type.STRING(50),
           validate: {
             isEmail: true,
           },
           allowNull: false,
-          unique: true
+          unique: true,
+          primaryKey: true
         },
         password: {
-          type: Sequelize.STRING(100),
+          type: type.STRING(100),
           allowNull: false
         },
         salt: {
-          type: Sequelize.STRING(32),
+          type: type.STRING(32),
           allowNull: false
         },
         admin: {
-          type: Sequelize.BOOLEAN,
+          type: type.BOOLEAN,
           allowNull: false
+        },
+        reason: {
+          type: type.TEXT,
+          allowNull: true
         }
       },
       {
@@ -42,4 +51,4 @@ module.exports = (sequelize) => {
     );
 
     return User;
-  }
+}
