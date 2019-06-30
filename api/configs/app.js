@@ -3,6 +3,7 @@
 *********/
 const express = require('express');
 const { promisify } = require('util');
+const bodyParser = require('body-parser');
 const RoutesUtil = require('../routes/index.js');
 
 // Get express object
@@ -15,6 +16,7 @@ const app = express()
  */
 const init = (config, db) => {
 	// set all the server things
+	app.use(bodyParser.json());
 	app.set('port', config.port);
 	app.set('hostname', config.host);
 	RoutesUtil.initRoutes(app);
