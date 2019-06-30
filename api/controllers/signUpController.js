@@ -19,13 +19,6 @@ class SignUpController {
             .catch(err => this.res.status(400).json({
                 err: err
             }));
-       /*this.db.User.create({
-           firstName: this.req.params.firstName,
-           lastName: this.req.params.lastName,
-           email: this.req.params.email,
-           password: this.req.params.password,
-           admin: thiss.req.params.admin
-        });*/
    }
 
    hashPassword(password) {
@@ -33,7 +26,7 @@ class SignUpController {
        var hash = bcrypt.hashSync(password, salt);
        return {salt : salt, hash: hash};
    }
-  
+   
 }
 
 module.exports = SignUpController;
