@@ -1,38 +1,40 @@
+// Config 
+const mysql = require('mysql');
 const Sequelize = require('sequelize');
 const config = require('./config/config.json')['database'];
-const defaultConfig = config.development;
 
-const database = new Sequelize(defaultConfig);
+// Models
+const UserModel = require('../models/users.js');
 
-var User = database.define("user",{
-  username: {
-    type: Sequelize.STRING(20),
-    allowNull: false,
-    unique: true
-  },
-  password: {
-    type: Sequelize.STRING(20),
-    allowNull: false
-  }  //just for now, can do salted hashes later for security
-  //salt:
-  //saltedHash:
-});
-
-database.define("index",{
-  indexName: {
-    type: Sequelize.STRING(20),
-    allowNull: false,
-    unique: true
-  },
-  url: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }
-});
-
-/*database.sync().then(function() {
-  User.create({
-    username:"admin",
-    password:"admin"
+// Create database instance
+var conn = mysql.createConnection({
+    port: 3306,
+    host: config.development.host,
+    user: config.development.username,
+    password: config.development.password
   });
-})*/
+
+console.log(config.development.password);
+
+console.log('connection created');
+  
+  conn.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    conn.query("CREATE DATABASE IF NOT EXISTS app", function (err, result) {
+      if (err) throw err;
+      console.log("Database created");
+    });
+  });
+const defaultConfig = config.development;
+const sequelize = new Sequelize(defaultConfig);
+
+const User = UserModel(sequelize, Sequelize);
+
+sequelize.sync().then(function() {
+    console.log('Database created!');
+});
+
+module.exports = {
+    User
+};
