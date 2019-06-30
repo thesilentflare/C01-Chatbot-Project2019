@@ -1,78 +1,40 @@
+// Config 
+const mysql = require('mysql');
 const Sequelize = require('sequelize');
 const config = require('./config/config.json')['database'];
+
+// Models
+const UserModel = require('../models/users.js');
+
+// Create database instance
+var conn = mysql.createConnection({
+    port: 3306,
+    host: config.development.host,
+    user: config.development.username,
+    password: config.development.password
+  });
+
+console.log(config.development.password);
+
+console.log('connection created');
+  
+  conn.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    conn.query("CREATE DATABASE IF NOT EXISTS app", function (err, result) {
+      if (err) throw err;
+      console.log("Database created");
+    });
+  });
 const defaultConfig = config.development;
+const sequelize = new Sequelize(defaultConfig);
 
-const database = new Sequelize(defaultConfig);
+const User = UserModel(sequelize, Sequelize);
 
-  var User = database.define("user",{
-  email: {
-    type: Sequelize.STRING(150),
-    allowNull: false,
-    unique: true
-  },
-  firstname: {
-    type: Sequelize.STRING(30),
-    allowNull: false,
-  },
-  lastname: {
-    type: Sequelize.STRING(30),
-    allowNull: false,
-  },
-  gender: {
-    type: Sequelize.ENUM('M','F'),
-    allowNull: false
-  },
-  reason: {
-    type: Sequelize.STRING(250),
-    allowNull: false,
-  },
-  password: {
-    type: Sequelize.STRING(32),
-    allowNull: false
-  }  //just for now, can do salted hashes later for security
-  //salt:
-  //saltedHash:
+sequelize.sync().then(function() {
+    console.log('Database created!');
 });
 
-var Admin = database.define("admins",{
-  email: {
-    type: Sequelize.STRING(150),
-    allowNull: false,
-    unique: true
-  },
-  adminToken: {
-    type: Sequelize.STRING(30),
-    allowNull: false,
-  },
-  password: {
-    type: Sequelize.STRING(32),
-    allowNull: false
-  },
-  firstname: {
-    type: Sequelize.STRING(30),
-    allowNull: false,
-  },
-  lastname: {
-    type: Sequelize.STRING(30),
-    allowNull: false,
-  }
-});
-
-
-database.sync().then(function() {
-  Admin.create({
-    email:"admin@mail.utoronto.ca",
-    password:"admin",
-    firstname:"ad",
-    lastname:"min",
-    adminToken:"ASDFFASDFASDFA"
-  }),
-  User.create({
-    email:"user@mail.utoronto.ca",
-    password:"user",
-    gender:"F",
-    firstname:"us",
-    lastname:"er",
-    reason:"I want to use chatbot"
-  })
-});
+module.exports = {
+    User
+};
