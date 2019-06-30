@@ -178,7 +178,7 @@ class UserForm extends Component {
 
 
         <button onClick={this.formSubmitHandler}
-                  disabled={! this.state.formIsValid}
+                  disabled={!this.state.formIsValid}
         >
           Submit
         </button>

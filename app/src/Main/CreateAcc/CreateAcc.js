@@ -38,10 +38,14 @@ class CreateAcc extends Component {
       <div className="mainpage">
         Create Account Page
 
-        <select className="acctype" onChange={this.changeForm} value={this.state.acctype}>
-          <option value="User">User</option>
-          <option value="Admin">Admin</option>
-        </select>
+        <div className="acctype">
+          <text>Select Your Account Type: </text>
+
+          <select className="accselect" onChange={this.changeForm} value={this.state.acctype}>
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
 
 
         <div className="form">
