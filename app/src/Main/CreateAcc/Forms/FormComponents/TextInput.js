@@ -9,7 +9,7 @@ const TextInput = props => {
     }
 
     return (
-        <div className="form-group">
+        <div className="form-input">
             <input type="text" className={formControl} {...props} />
         </div>
     );
