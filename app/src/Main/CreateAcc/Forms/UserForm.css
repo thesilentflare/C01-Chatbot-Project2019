@@ -1,0 +1,19 @@
+.usercomponents{
+}
+
+.form-select{
+    margin-bottom:10px;
+}
+
+.name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first {
+    padding: 0px 0px 0px 0px;
+}
+.form-input {
+    padding: 0px 0px 0px 0px;
+}

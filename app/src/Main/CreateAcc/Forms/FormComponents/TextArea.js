@@ -9,7 +9,7 @@ const TextArea = props => {
     }
 
     return (
-        <div className="form-group">
+        <div className="form-area">
             <textarea {...props} className={formControl} />
         </div>
     );
