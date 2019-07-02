@@ -3,8 +3,8 @@ import { NavLink, Redirect} from 'react-router-dom'
 import * as comp from './components'
 
 class Query extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       formIsValid: false,
       toggleIBM: true,

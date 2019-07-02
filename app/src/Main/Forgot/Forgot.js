@@ -3,8 +3,8 @@ import { NavLink, Redirect} from 'react-router-dom'
 
 
 class Forgot extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {}
   }
 
