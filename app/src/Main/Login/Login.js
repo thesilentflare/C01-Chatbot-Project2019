@@ -4,8 +4,8 @@ import * as comp from './Components'
 
 
 class Login extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       formIsValid: false,
       redirectQuery: false,
@@ -64,7 +64,8 @@ class Login extends Component {
 
   }
 
-  formSubmitHandler = () => {
+  formSubmitHandler = async event => {
+    event.preventDefault();
   	const formData = {}; //All data stored as dictionary
   	for (let formElementId in this.state.formControls) {
   	    formData[formElementId] = this.state.formControls[formElementId].value;
@@ -73,10 +74,21 @@ class Login extends Component {
         alert(formData[data]); //testing each value sent
       }
 
-      if (true){
-        this.setState({redirectQuery: true}); //send data to server, check then set to true
-      }
+    {/*Here do the check*/}
+    try{
+      {/*await Auth.signIn(this.state.email, this.state.password);*/}
+      alert("Logged in");
+      this.props.userHasAuthenticated(true);
+      this.setState({redirectQuery: true}); //send data to server, check then set to true
+    } catch (e) {
+      alert(e.message);
     }
+    }
+
+
+
+
+
 
   redirectForgot = () => {
     this.setState({redirectForgot: true});

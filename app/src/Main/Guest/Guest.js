@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 
 class Guest extends Component {
-  render() {
+  render(props) {
     return (
       <div className="">
       Guest Access

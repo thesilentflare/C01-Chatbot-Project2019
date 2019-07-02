@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 import * as form from './Forms'
 
 class CreateAcc extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       acctype: "User",
       showuser: true,
