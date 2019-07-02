@@ -122,7 +122,7 @@ class UserForm extends Component {
     return (
       <div className="usercomponents">
         <div className="name">
-          <div className="first">
+          <div className="component first">
             First Name
             <comp.TextInput name="firstname"
                         placeholder={this.state.formControls.firstname.placeholder}
@@ -132,7 +132,7 @@ class UserForm extends Component {
                         valid={this.state.formControls.firstname.valid}
             />
           </div>
-          <div className="last">
+          <div className="component last">
             Last Name
             <comp.TextInput name="lastname"
                         placeholder={this.state.formControls.lastname.placeholder}
@@ -143,45 +143,54 @@ class UserForm extends Component {
             />
           </div>
         </div>
-        Select Your Gender
-        <comp.Select name="gender"
-                  value={this.state.formControls.gender.value}
-                  onChange={this.changeHandler}
-                  options={this.state.formControls.gender.options}
-                  touched={this.state.formControls.gender.touched}
-                  valid={this.state.formControls.gender.valid}
-        />
-        Email
-        <comp.Email name="email"
-                  placeholder={this.state.formControls.email.placeholder}
-                  value={this.state.formControls.email.value}
-                  onChange={this.changeHandler}
-                  touched={this.state.formControls.email.touched}
-                  valid={this.state.formControls.email.valid}
-          />
-        Password
-        <comp.Password name="password"
-                  placeholder={this.state.formControls.password.placeholder}
-                  value={this.state.formControls.password.value}
-                  onChange={this.changeHandler}
-                  touched={this.state.formControls.password.touched}
-                  valid={this.state.formControls.password.valid}
-        />
-        Purpose
-        <comp.TextArea name="purpose"
-                    placeholder={this.state.formControls.purpose.placeholder}
-                    value={this.state.formControls.purpose.value}
+        <div className="component">
+          Select Your Gender
+          <comp.Select name="gender"
+                    value={this.state.formControls.gender.value}
                     onChange={this.changeHandler}
-                    touched={this.state.formControls.purpose.touched}
-                    valid={this.state.formControls.purpose.valid}
-        />
+                    options={this.state.formControls.gender.options}
+                    touched={this.state.formControls.gender.touched}
+                    valid={this.state.formControls.gender.valid}
+          />
+        </div>
+        <div className="component">
+          Email
+          <comp.Email name="email"
+                    placeholder={this.state.formControls.email.placeholder}
+                    value={this.state.formControls.email.value}
+                    onChange={this.changeHandler}
+                    touched={this.state.formControls.email.touched}
+                    valid={this.state.formControls.email.valid}
+            />
+        </div>
+        <div className="component">
+          Password
+          <comp.Password name="password"
+                    placeholder={this.state.formControls.password.placeholder}
+                    value={this.state.formControls.password.value}
+                    onChange={this.changeHandler}
+                    touched={this.state.formControls.password.touched}
+                    valid={this.state.formControls.password.valid}
+          />
+        </div>
+        <div className="component">
+          Purpose
+          <comp.TextArea name="purpose"
+                      placeholder={this.state.formControls.purpose.placeholder}
+                      value={this.state.formControls.purpose.value}
+                      onChange={this.changeHandler}
+                      touched={this.state.formControls.purpose.touched}
+                      valid={this.state.formControls.purpose.valid}
+          />
+        </div>
 
-
-        <button onClick={this.formSubmitHandler}
-                  disabled={!this.state.formIsValid}
-        >
-          Submit
-        </button>
+        <div className="submit">
+          <button className="submitButton" onClick={this.formSubmitHandler}
+                    disabled={!this.state.formIsValid}
+          >
+            Submit
+          </button>
+        </div>
       </div>
 
 
