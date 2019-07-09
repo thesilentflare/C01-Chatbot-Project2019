@@ -2,6 +2,9 @@ package com.group8.search.models;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -10,29 +13,31 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.document.Field;
 
-class Documenter {
+public class Documenter {
     // Odcument object instance fields
     private ResultSet resultSet;
-    ResultSetMetaData metaData;
+    private ResultSetMetaData metaData;
+    private List<Document> docs;
     
     /**
-     * Create a Documenter object that generates Lucene Documents that are
-     * added to an Index
+     * Constrcuts a Documenter object that generates Lucene Documents
      * @param set ResultSet - table representation
      */
     public Documenter(ResultSet set) {
         this.resultSet = set;
         try {
-			this.metaData = this.resultSet.getMetaData();
+            this.metaData = this.resultSet.getMetaData();
+            this.docs = this.getDocuments();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+        }
     }
 
     
     /**
      * Given a list of valuse generate a Lucene Document
      * @param vals String[] - list of values to be added to the Doucemnt
+     * @return Document - Lucene Document with given vals
      */
     public Document createDocument(String[] vals) throws IllegalArgumentException, SQLException {
         int numberOfColumns = this.metaData.getColumnCount();
@@ -56,15 +61,16 @@ class Documenter {
             doc.add(field);
         }
         
-
         return doc;
     }
 
     /**
      * Generate a list of Douments from the database
+     * @return List<Document> - list of Lucene Documents 
+     *                                representing rows of a table
      */
-    public ArrayList<Document> getDocuments() throws SQLException {
-        ArrayList<Document> docs = new ArrayList<Document>();
+    public List<Document> getDocuments() throws SQLException {
+        List<Document> docs = new ArrayList<Document>();
 
         int numberOfColumns = this.metaData.getColumnCount();
 
@@ -85,10 +91,50 @@ class Documenter {
         
         return docs;
     }
-
-    class DocumentIterator {
-
+    
+    /**
+     * Get an iterator to move though the Lucene Documents
+     * @return Iterator - iterate through Documents
+     */
+    public Iterator<Document> getIterator() {
+        return new DocumentIterator(this);
     }
 
+    
+    public class DocumentIterator implements Iterator<Document> {
 
+        private Iterator<Document> iterator;
+        private Document doc; 
+
+        /**
+         * Constrcuts a DocumentIterator object
+         */
+        public DocumentIterator(Documenter docer) {
+            this.iterator = docer.docs.iterator();
+            this.doc = (Document) this.iterator.next();
+        }
+
+		public boolean hasNext() {
+            return this.doc != null;
+		}
+
+		public Document next() {
+			try {
+                this.doc = (Document) this.iterator.next();
+            } catch (NoSuchElementException ex) {
+                this.doc = null;
+            }
+            
+            return this.doc;
+		}
+
+        /**
+         * Get the current Document being pointed too
+         * @return Document - current Document being pointed too
+         */
+		public Document currentValue() {
+            return this.doc;
+		}
+        
+    }
 }
