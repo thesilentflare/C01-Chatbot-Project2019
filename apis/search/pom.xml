@@ -20,6 +20,7 @@
       <scope>test</scope>
     </dependency>
     
+    <!-- JSOUP WEBCRAWLER -->
     <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
     <dependency>
       <groupId>org.jsoup</groupId>
@@ -27,6 +28,7 @@
       <version>1.11.3</version>
     </dependency>
 
+    <!-- LUCENE INDXER -->
     <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
     <dependency>
         <groupId>org.apache.lucene</groupId>
@@ -47,6 +49,16 @@
         <artifactId>lucene-queryparser</artifactId>
         <version>8.1.1</version>
     </dependency>
+
+    <!-- MYSQL DATABASE CONNECITON -->
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.15</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
