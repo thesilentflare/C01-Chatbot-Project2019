@@ -11,22 +11,24 @@ import java.sql.SQLException;
 
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.TextField;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.apache.lucene.document.Field;
 
 public class Documenter {
     // Odcument object instance fields
-    private ResultSet resultSet;
+    @Autowired
+    private ArticleDAOImpl articleDAO;
+    private List<Article> resultSet;
     private ResultSetMetaData metaData;
     private List<Document> docs;
     
     /**
      * Constrcuts a Documenter object that generates Lucene Documents
-     * @param set ResultSet - table representation
      */
-    public Documenter(ResultSet set) {
-        this.resultSet = set;
+    public Documenter() {
+        this.resultSet = this.articleDAO.findAll();
         try {
-            this.metaData = this.resultSet.getMetaData();
+            this.metaData = this.articleDAO.getMetaData();
             this.docs = this.getDocuments();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -48,7 +50,7 @@ public class Documenter {
         // Check if given db row is valid
         if (vals.length != this.metaData.getColumnCount()) {
             throw new IllegalArgumentException(
-                "Invalid row size for" + Arrays.toString(vals)
+                "Invalid row size for: " + Arrays.toString(vals)
             );
         }
 
@@ -67,7 +69,7 @@ public class Documenter {
     /**
      * Generate a list of Douments from the database
      * @return List<Document> - list of Lucene Documents 
-     *                                representing rows of a table
+     *                          representing rows of a table
      */
     public List<Document> getDocuments() throws SQLException {
         List<Document> docs = new ArrayList<Document>();
@@ -75,13 +77,14 @@ public class Documenter {
         int numberOfColumns = this.metaData.getColumnCount();
 
         // Loop through each row in the result set
-        while (this.resultSet.next()) {
+        for (Article article : this.resultSet) {
 
             String[] vals = new String[numberOfColumns];
+            Iterator<String> itr = article.getIterator();
 
             // Loop through each column of the current row
             for (int colIndx = 0; colIndx < numberOfColumns; colIndx++) {
-                vals[colIndx] = resultSet.getString(colIndx + 1);
+                vals[colIndx] = itr.next();
             }
 
             // Generate Lucene Document
