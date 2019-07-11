@@ -1,10 +1,14 @@
-package com.group8.search.models;
+package com.group8.search.indexer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import com.group8.search.models.Article;
+import com.group8.search.models.ArticleDAOImpl;
+
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
@@ -91,7 +95,7 @@ public class Documenter {
             docs.add(doc);
         }
         
-        return docs;
+        return docs; 
     }
     
     /**
