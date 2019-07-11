@@ -1,11 +1,8 @@
 package com.group8.search.models;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,11 +14,6 @@ public class Article {
     private String url;
     private String keywords;
     private String text;
-
-    private int NAME_INDEX = 0;
-    private int URL_INDEX = 1;
-    private int KEYWORDS_INDEX = 2;
-    private int TEXT_INDEX = 3;
 
     private String[] KEYS = {"name", "url", "keywords", "text"};
 
