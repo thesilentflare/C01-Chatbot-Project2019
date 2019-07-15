@@ -1,0 +1,7 @@
+During the demo there was lot of time spent showing me the various HTTP post request to add/modify/delete elements on the database. I understand these may be important, 
+however, I was very interested in seeing other required and critical pieces of your project and how if any are they functioning. Unfortunately, I could not see this. 
+
+I understand the UI is crude right now, and that hopefully, as we wrap the project up, this will be polished up and all the required pieces put together. There is immense work
+ahead of you, and it is a challange in itself, howevre, I am confident that you can wrap up and have a successful project!
+
+Mark: 5/10
