@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import com.group8.search.models.Article;
+import com.group8.search.models.ArticleDAO;
 import com.group8.search.models.ArticleDAOImpl;
 
 import java.sql.ResultSetMetaData;
@@ -16,11 +17,13 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.document.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.apache.lucene.document.Field;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Documenter {
     // Odcument object instance fields
     @Autowired
-    private ArticleDAOImpl articleDAO;
+    private ArticleDAO articleDAO;
     private List<Article> resultSet;
     private ResultSetMetaData metaData;
     private List<Document> docs;
@@ -29,6 +32,7 @@ public class Documenter {
      * Constrcuts a Documenter object that generates Lucene Documents
      */
     public Documenter() {
+        this.articleDAO = new ArticleDAOImpl();
         this.resultSet = this.articleDAO.findAll();
         try {
             this.metaData = this.articleDAO.getMetaData();
@@ -51,17 +55,20 @@ public class Documenter {
         Document doc = new Document();
 
         // Check if given db row is valid
-        if (vals.length != this.metaData.getColumnCount()) {
+        if (vals.length != numberOfColumns) {
             throw new IllegalArgumentException(
                 "Invalid row size for: " + Arrays.toString(vals)
             );
         }
+        String[] KEYS = {"name", "url", "keywords", "text"};
 
         // Add each cell in the given row to the new Document object
         for (int indx = 0; indx < numberOfColumns; indx++) {
+            int colID = indx + 1;
+            String colName = this.metaData.getColumnName(colID);
+            System.out.println("COL NAME: " + colName);
             // Create an indexable field based on current column value
-            TextField field = new TextField(this.metaData.getColumnName(indx), vals[indx],
-                                             Field.Store.YES);
+            TextField field = new TextField(colName, vals[indx], Field.Store.YES);
             // A new indexable field to lucene Document
             doc.add(field);
         }
@@ -78,6 +85,8 @@ public class Documenter {
         List<Document> docs = new ArrayList<Document>();
 
         int numberOfColumns = this.metaData.getColumnCount();
+        System.out.println("RESULT SET: ");
+        System.out.print(this.resultSet);
 
         // Loop through each row in the result set
         for (Article article : this.resultSet) {
@@ -103,18 +112,18 @@ public class Documenter {
      * @return Iterator - iterate through Documents
      */
     public Iterator<Document> getIterator() {
-        return new DocumentIterator(this);
+        return this.docs.iterator();
     }
 
     
-    public class DocumentIterator implements Iterator<Document> {
+    /*public class DocumentIterator implements Iterator<Document> {
 
         private Iterator<Document> iterator;
         private Document doc; 
 
         /**
          * Constrcuts a DocumentIterator object
-         */
+         *
         public DocumentIterator(Documenter docer) {
             this.iterator = docer.docs.iterator();
             this.doc = (Document) this.iterator.next();
@@ -137,10 +146,10 @@ public class Documenter {
         /**
          * Get the current Document being pointed too
          * @return Document - current Document being pointed too
-         */
+         *
 		public Document currentValue() {
             return this.doc;
 		}
         
-    }
+    }*/
 }
