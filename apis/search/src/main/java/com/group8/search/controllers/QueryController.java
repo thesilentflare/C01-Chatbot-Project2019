@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 //@RequestMapping("/query")
@@ -79,7 +79,7 @@ public class QueryController {
     * @param req QueryRequest - the query to be searched for among the indexed data
     * @return ResponseEntity<Article> - an Article entry 
     */
-   
+   @CrossOrigin(origins = "http://localhost:8080")
    @RequestMapping(value = "/query", method = RequestMethod.POST)
    public ResponseEntity<Article> query(@RequestBody QueryRequest req) {
       // Create a place to store the query results
