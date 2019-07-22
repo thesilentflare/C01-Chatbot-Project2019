@@ -34,11 +34,14 @@
 
 | Question | Expected | Actual |
 | --- | --- | --- |
-| Show me your progress for week 3 | 5 | 0 |
-| Show me your progress for week 4 | 5 | 0 |
-| Tell me about the flow of your application | 5 | 0 |
-| Run your application | 5 | 0 |
+| Show me your progress for week 3 | 5 | 5 |
+| Show me your progress for week 4 | 5 | 5 |
+| Tell me about the flow of your application | 5 | 5 |
+| Run your application | 5 | 5 |
 
 **Comments**
 
- - Missing
+ - Found grades (My bad :c)
+ - Clear burndown chart and table for week 3 and 4
+ - Have clear idea of how IBM connects
+ - Front-end is functional but basic
