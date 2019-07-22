@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as comp from './FormComponents'
+import './UserForm.css'
 
 class UserForm extends Component {
   constructor(){
@@ -54,7 +55,7 @@ class UserForm extends Component {
         },
         password: {
           value: '',
-          placeholder: 'Password',
+          placeholder: 'Password (min 8 characters)',
           valid: false,
           validationRules: {
             isRequired: true,
@@ -119,56 +120,77 @@ class UserForm extends Component {
 
   render() {
     return (
-      <div className="">
-        <comp.Select name="gender"
-                  value={this.state.formControls.gender.value}
-                  onChange={this.changeHandler}
-                  options={this.state.formControls.gender.options}
-                  touched={this.state.formControls.gender.touched}
-                  valid={this.state.formControls.gender.valid}
-        />
-        <comp.TextInput name="firstname"
-                     placeholder={this.state.formControls.firstname.placeholder}
-                     value={this.state.formControls.firstname.value}
-                     onChange={this.changeHandler}
-                     touched={this.state.formControls.firstname.touched}
-                     valid={this.state.formControls.firstname.valid}
-        />
-        <comp.TextInput name="lastname"
-                     placeholder={this.state.formControls.lastname.placeholder}
-                     value={this.state.formControls.lastname.value}
-                     onChange={this.changeHandler}
-                     touched={this.state.formControls.lastname.touched}
-                     valid={this.state.formControls.lastname.valid}
-        />
-        <comp.Email name="email"
-                  placeholder={this.state.formControls.email.placeholder}
-                  value={this.state.formControls.email.value}
-                  onChange={this.changeHandler}
-                  touched={this.state.formControls.email.touched}
-                  valid={this.state.formControls.email.valid}
-          />
-        <comp.Password name="password"
-                  placeholder={this.state.formControls.password.placeholder}
-                  value={this.state.formControls.password.value}
-                  onChange={this.changeHandler}
-                  touched={this.state.formControls.password.touched}
-                  valid={this.state.formControls.password.valid}
-        />
-        <comp.TextArea name="purpose"
-                    placeholder={this.state.formControls.purpose.placeholder}
-                    value={this.state.formControls.purpose.value}
+      <div className="usercomponents">
+        <div className="name">
+          <div className="component first">
+            First Name
+            <comp.TextInput name="firstname"
+                        placeholder={this.state.formControls.firstname.placeholder}
+                        value={this.state.formControls.firstname.value}
+                        onChange={this.changeHandler}
+                        touched={this.state.formControls.firstname.touched}
+                        valid={this.state.formControls.firstname.valid}
+            />
+          </div>
+          <div className="component last">
+            Last Name
+            <comp.TextInput name="lastname"
+                        placeholder={this.state.formControls.lastname.placeholder}
+                        value={this.state.formControls.lastname.value}
+                        onChange={this.changeHandler}
+                        touched={this.state.formControls.lastname.touched}
+                        valid={this.state.formControls.lastname.valid}
+            />
+          </div>
+        </div>
+        <div className="component">
+          Select Your Gender
+          <comp.Select name="gender"
+                    value={this.state.formControls.gender.value}
                     onChange={this.changeHandler}
-                    touched={this.state.formControls.purpose.touched}
-                    valid={this.state.formControls.purpose.valid}
-        />
+                    options={this.state.formControls.gender.options}
+                    touched={this.state.formControls.gender.touched}
+                    valid={this.state.formControls.gender.valid}
+          />
+        </div>
+        <div className="component">
+          Email
+          <comp.Email name="email"
+                    placeholder={this.state.formControls.email.placeholder}
+                    value={this.state.formControls.email.value}
+                    onChange={this.changeHandler}
+                    touched={this.state.formControls.email.touched}
+                    valid={this.state.formControls.email.valid}
+            />
+        </div>
+        <div className="component">
+          Password
+          <comp.Password name="password"
+                    placeholder={this.state.formControls.password.placeholder}
+                    value={this.state.formControls.password.value}
+                    onChange={this.changeHandler}
+                    touched={this.state.formControls.password.touched}
+                    valid={this.state.formControls.password.valid}
+          />
+        </div>
+        <div className="component">
+          Purpose
+          <comp.TextArea name="purpose"
+                      placeholder={this.state.formControls.purpose.placeholder}
+                      value={this.state.formControls.purpose.value}
+                      onChange={this.changeHandler}
+                      touched={this.state.formControls.purpose.touched}
+                      valid={this.state.formControls.purpose.valid}
+          />
+        </div>
 
-
-        <button onClick={this.formSubmitHandler}
-                  disabled={! this.state.formIsValid}
-        >
-          Submit
-        </button>
+        <div className="submit">
+          <button className="submitButton" onClick={this.formSubmitHandler}
+                    disabled={!this.state.formIsValid}
+          >
+            Submit
+          </button>
+        </div>
       </div>
 
 

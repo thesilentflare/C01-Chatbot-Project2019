@@ -9,7 +9,7 @@ const Select = props => {
     }
 
     return (
-        <div className="form-group">
+        <div className="form-select">
             <select className={formControl} value={props.value} onChange={props.onChange} name={props.name}>
               {props.options.map(option => (
                 <option value={option.value}>

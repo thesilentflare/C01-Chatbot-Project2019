@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Email = props => {
+const SearchBar = props => {
 
     let formControl = "form-control";
 
@@ -9,9 +9,9 @@ const Email = props => {
     }
 
     return (
-        <div className="form-email">
-            <input type="email" className={formControl} {...props} />
+        <div className="form-group">
+            <input type="text" className={formControl} {...props} />
         </div>
     );
 }
-export default Email;
+export default SearchBar;

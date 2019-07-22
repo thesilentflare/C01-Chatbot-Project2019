@@ -9,8 +9,8 @@ const Email = props => {
     }
 
     return (
-        <div className="form-email">
-            <input type="email" className={formControl} {...props} />
+        <div className="form-group">
+            <input type="text" className={formControl} {...props} />
         </div>
     );
 }
