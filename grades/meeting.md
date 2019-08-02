@@ -117,9 +117,10 @@
 | Question | Expected | Actual |
 | --- | --- | --- |
 | Show me your progress for week 7 | 5 | 5 |
-| Demo Application | 5 | 5 |
+| Demo Application | 5 | 4 |
 
 **Comments**
 
  - Organized, but a bit behind on the board
  - Has an MVP, but missing some polish and features to cover all functionalities
+ - Missing ability to crawl from the front-end
