@@ -111,3 +111,15 @@
         - made the sprint too big
             - added too many tasks
         - things are tricky
+        
+## Week 5: July 29 - August 2
+
+| Question | Expected | Actual |
+| --- | --- | --- |
+| Show me your progress for week 7 | 5 | 5 |
+| Demo Application | 5 | 5 |
+
+**Comments**
+
+ - Organized, but a bit behind on the board
+ - Has an MVP, but missing some polish and features to cover all functionalities
