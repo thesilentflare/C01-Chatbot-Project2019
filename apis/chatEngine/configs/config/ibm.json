@@ -1,0 +1,11 @@
+{
+    "nlp": {
+        "key": "sMpi-ZodP2Tf_uULnoga9mHWo9v_T_xfdwd4D11Vxtct",
+        "endpoint": "https://gateway.watsonplatform.net/natural-language-understanding/api"
+    },
+    "tone": {
+        "key": "fx-rUyZHqv2Ok2X5tYkMiOzis053DZ-IxYq-xJlBjjWa",
+        "endpoint": "https://gateway.watsonplatform.net/tone-analyzer/api"
+    }
+    
+}

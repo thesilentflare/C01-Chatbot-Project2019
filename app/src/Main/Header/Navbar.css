@@ -1,0 +1,13 @@
+.body{
+  max-width: 100vw;
+}
+.nav-bar{
+  background-color: #2588c9;
+}
+.navitem{
+  color: black !important;
+  text-decoration: none !important;
+}
+.lefter{
+  left: -80px;
+}

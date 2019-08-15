@@ -6,6 +6,7 @@ const config = require('./config/config.json')['database'];
 // Models
 const UserModel = require('../models/users.js');
 const IndexModel = require('../models/indx.js');
+const ArticleModel = require('../models/article.js');
 
 // Create database instance
 var conn = mysql.createConnection({
@@ -32,6 +33,7 @@ const sequelize = new Sequelize(defaultConfig);
 
 const User = UserModel(sequelize, Sequelize);
 const Index = IndexModel(sequelize, Sequelize);
+const Article = ArticleModel(sequelize, Sequelize);
 
 //dummy values
 sequelize.sync().then(function() {
@@ -81,5 +83,7 @@ sequelize.sync().then(function() {
 
 module.exports = {
     User,
-    Index
+    conn,
+    Index,
+    Article
 };

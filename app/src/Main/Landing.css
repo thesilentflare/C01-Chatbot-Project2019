@@ -18,7 +18,9 @@ h2{
 }
 
 .nav{
-  padding: 0 38%;
+  display: block;
+  padding-left: 40%;
+  padding-right: 40%;
 }
 
 .nav ul{
@@ -34,7 +36,7 @@ h2{
 }
 
 .nav button{
-  background-color: #00b1bd;
+  background-color: #2588c9;
   border: none;
   color: black;
   padding: 20px;

@@ -18,8 +18,8 @@ public class ApplicationConfig {
  
     private String CLASS_NAME = "com.mysql.jdbc.Driver";
     private String URL = "jdbc:mysql://localhost:3306/app?useSSL=false&serverTimezone=EST5EDT";
-    private String USERNAME = "root";
-    private String PASSWORD = "password";
+    private String USERNAME = "node";
+    private String PASSWORD = null;
 
     @Bean
     public DataSource dataSource() {

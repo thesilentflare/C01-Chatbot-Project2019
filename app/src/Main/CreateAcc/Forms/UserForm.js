@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { NavLink, Redirect } from 'react-router-dom'
 import * as comp from './FormComponents'
 import './UserForm.css'
 
 class UserForm extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
+      redirectLogin: false,
       formIsValid: false,
       formControls: {
         gender: {
@@ -19,11 +21,11 @@ class UserForm extends Component {
           },
           options: [
             { value: '-', displayValue: 'Choose Gender' },
-            { value: 'male', displayValue: 'Male' },
-            { value: 'female', displayValue: 'Female'}
+            { value: 'm', displayValue: 'Male' },
+            { value: 'f', displayValue: 'Female'}
           ]
         },
-        firstname: {
+        firstName: {
           value: '',
           placeholder: 'Firstname',
           valid: false,
@@ -33,7 +35,7 @@ class UserForm extends Component {
             minLength: 1
           }
         },
-        lastname: {
+        lastName: {
           value: '',
           placeholder: 'Lastname',
           valid: false,
@@ -113,33 +115,78 @@ class UserForm extends Component {
   	for (let formElementId in this.state.formControls) {
   	    formData[formElementId] = this.state.formControls[formElementId].value;
   	}
-      for (var data in formData){
-        alert(formData[data]); //testing each value sent
+      // for (var data in formData){
+      //   alert(formData[data]); //testing each value sent
+      // }
+      //this.props.redirecting();
+
+    formData["admin"] = 0;
+
+      var json = JSON.stringify(formData);
+      //alert("json: "+json);
+      console.log(json);
+
+
+      fetch('http://localhost:6060/signup', {
+        method: "POST",
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: json,
       }
+      ) //mask the backend somewhere else
+      .then((res) => {
+        //alert(JSON.stringify(res));
+        if (res.message){
+          alert(res.message);
+        }
+        else{
+
+          alert("Please Login Now with your credentials");
+          this.setState({
+            redirectLogin: true,
+          })
+        }
+      })
+      .catch(function(error) {console.log(error); alert(error);});
+    //   .then(res => res.json())
+    //   .then(res => {sessionStorage.setItem('jwt', (res.token))
+    //   this.setState({redirectQuery: true});
+    //   this.props.props.userHasAuthenticated(true, formData["email"])
+    // })
+    //   .catch(function(error) {console.log(error); alert(error);});
+      // this.setState({
+      //   redirectQuery: true
+      // });
     }
 
   render() {
+    if (this.state.redirectLogin === true) {
+      return <Redirect to='/login' props={this.props}/>
+    }
     return (
       <div className="usercomponents">
         <div className="name">
-          <div className="component first">
+          <div className="first">
             First Name
-            <comp.TextInput name="firstname"
-                        placeholder={this.state.formControls.firstname.placeholder}
-                        value={this.state.formControls.firstname.value}
+            <comp.TextInput name="firstName"
+                        placeholder={this.state.formControls.firstName.placeholder}
+                        value={this.state.formControls.firstName.value}
                         onChange={this.changeHandler}
-                        touched={this.state.formControls.firstname.touched}
-                        valid={this.state.formControls.firstname.valid}
+                        touched={this.state.formControls.firstName.touched}
+                        valid={this.state.formControls.firstName.valid}
+                        maxLength="36"
             />
           </div>
-          <div className="component last">
+          <div className="last">
             Last Name
-            <comp.TextInput name="lastname"
-                        placeholder={this.state.formControls.lastname.placeholder}
-                        value={this.state.formControls.lastname.value}
+            <comp.TextInput name="lastName"
+                        placeholder={this.state.formControls.lastName.placeholder}
+                        value={this.state.formControls.lastName.value}
                         onChange={this.changeHandler}
-                        touched={this.state.formControls.lastname.touched}
-                        valid={this.state.formControls.lastname.valid}
+                        touched={this.state.formControls.lastName.touched}
+                        valid={this.state.formControls.lastName.valid}
+                        maxLength="36"
             />
           </div>
         </div>
@@ -192,7 +239,6 @@ class UserForm extends Component {
           </button>
         </div>
       </div>
-
 
     );
   }

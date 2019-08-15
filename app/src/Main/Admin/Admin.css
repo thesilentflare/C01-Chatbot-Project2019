@@ -1,0 +1,25 @@
+.jumbotron1{
+  height: 100%;
+  padding: 2em;
+}
+h5{
+  padding-bottom: 2em;
+}
+
+.crawler{
+  display: flex;
+  width:100%;
+  align-content:center;
+  margin-bottom:10px;
+}
+
+
+.url{
+  width: 25%;
+  margin-left:25%;
+}
+
+.depth{
+  width: 25%;
+  margin-right:25%;
+}

@@ -1,0 +1,1 @@
+Please go into EnvironmentManager and change initWebDriver to use the correct Operating System webdriver.

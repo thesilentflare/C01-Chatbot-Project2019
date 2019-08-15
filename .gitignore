@@ -1,1 +1,7 @@
 .DS_Store
+apis/npm-debug.log
+npm-debug.log
+node_modules
+/node_modules/
+/apis/chatEngine/node_modules
+/apis/login/node_modules

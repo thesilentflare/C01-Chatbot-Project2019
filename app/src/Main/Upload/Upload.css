@@ -1,0 +1,20 @@
+.wrapper2{
+  display: block;
+}
+.form{
+  margin-bottom: 10px;
+  display: flex;
+}
+.choosefile{
+  margin-bottom: 20px;
+}
+
+.pickfile{
+  border: 1px gray solid;
+  height: 100%;
+}
+
+button{
+  border-radius: 25px;
+  margin-top:20px;
+}

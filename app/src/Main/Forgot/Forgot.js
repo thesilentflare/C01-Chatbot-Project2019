@@ -13,7 +13,9 @@ class Forgot extends Component {
 
     return(
       <div className="">
-      Forgot
+      Forgot Password Page
+      <p> This was not implemented as we ran out of time. :')</p>
+      <p> Just use the browsers back button to go back.</p>
       </div>
     );
   }

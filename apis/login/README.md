@@ -35,9 +35,19 @@ Sequelize-cli v5.5.0
 - Request Body: 
     ```json
     {
-        "email": "test@mail.com",
+        "email": "test2@mail.com",
         "password": "pass"
     }
+    ```
+- OK Response Body:
+    ```json
+    {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAbWFpbC5jb20iLCJpYXQiOjE1NjQ4NzM5MDIsImV4cCI6MTU2NDkwOTkwMn0.zz55AP8vXTlUiioEvkESjOATaLcVt_hHe2AUQaiucGo"
+    }
+    ```
+- Possible Response Statuses:
+    - 200: User logged-in
+    - 400: Bad request
     ```
 ### Sign Up
 - Endpoint: http://localhost:3000/signUp/
@@ -53,3 +63,42 @@ Sequelize-cli v5.5.0
         "respons": "somthing"
     }
     ```
+- OK Response Body:
+    ```json
+    {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAbWFpbC5jb20iLCJpYXQiOjE1NjQ4NzM5MDIsImV4cCI6MTU2NDkwOTkwMn0.zz55AP8vXTlUiioEvkESjOATaLcVt_hHe2AUQaiucGo"
+    }
+    ```
+- Possible Response Statuses:
+    - 200: User logged-in
+    - 400: Bad request
+
+### User
+- Endpoint: http://localhost:3000/user/
+- Request Body:
+    ```json
+    {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAbWFpbC5jb20iLCJpYXQiOjE1NjQ4NzM5MDIsImV4cCI6MTU2NDkwOTkwMn0.zz55AP8vXTlUiioEvkESjOATaLcVt_hHe2AUQaiucGo"
+    }
+    ```
+- OK Response Body:
+    ```json
+    {
+        "user": {
+            "first": "first",
+            "last": "last",
+            "email": "test@mail.com",
+            "admin": false
+        }
+    }
+    ```
+- OK Response Body:
+    ```json
+    {
+        "user": "Error meessage"
+    }
+    ```
+- Possible Response Statuses:
+    - 200: User logged-in
+    - 400: Bad request
+    - 404: User not found

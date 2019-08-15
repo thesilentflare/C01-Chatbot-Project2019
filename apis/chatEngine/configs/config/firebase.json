@@ -1,0 +1,28 @@
+{
+    "local" : {
+        "host": "localhost",
+        "port": 4000
+    },
+    "database": {
+        "apiKey": "AIzaSyA5Y6m-sV61JM7WEWuZ30BKRM3VOw5gUzg",
+        "authDomain": "chathistory-1e8c3.firebaseapp.com",
+        "databaseURL": "https://chathistory-1e8c3.firebaseio.com",
+        "projectId": "chathistory-1e8c3",
+        "storageBucket": "",
+        "messagingSenderId": "880213781184",
+        "appId": "1:880213781184:web:7277fa628f13f779"
+    },
+    "serviceAccountKey": {
+        "type": "service_account",
+        "project_id": "chathistory-1e8c3",
+        "private_key_id": "1a2f861483d6c3bb17a19f5f2428a17bc18c238c",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDY72FnlDEoF/p0\nGG9DIg6OYmxDgS5LkBH8Ex42Il1UsCijtArFitmCqS/w6IGC0AScId/I/u80HIQV\nUDuhTfrPWiYHg3uj36eoy7pGal3OS9Yg1gVIQk/BFd5Gv9BTpSxA55u1PFiCqTjK\nlmzQeGVH1gfOuiQLs6bxuxD3LSPIhxc/I8FfDQ0a5utUMJUyIe/aibgs3cRXIb/u\nBm4h50q3vdOSntqYb5I95D5cITKmD9fDr8RrpxENRqsbyPr0Uo4WizskvFxSxxHb\nrDiteaQ5n6ScVtuhTPWloWy5Ooxei1XxhWgOiuKSjFj7TbGodxKtENlFRuG+JHhu\n9wyGAQwZAgMBAAECggEAFztnoIqXyxXqTgWR4MwkZ+41bvNGLHR04JyBh0Wd3iRx\nbbqpzqcEjUAmMLQNrp8tZzUffKyEnH2TTZ8Gi8tImW0rlnFny9B3aZXL0J+yhRXN\nDD4vWaI0XVbEs6n2Gwcc2qSTIdEhH3kU6mk6pQbHve43btWzZ4dpUQj6E6aDZwWS\nJxQJ2F++nXN2xZMAQtv8SShyxnnfkY75PVMz9bTD++J2AMnyDVStlXU8ciwtJ7GJ\nMdx/TkX9Jqmy5/ZEMt/uEum156Tub/BawGOu2IdiQo8DJRtByUkp51FJWnnYJGQA\nHLkcM/do0fqcztWUruqBtplCIEb1TrjnYPAu7XKdgQKBgQDtusluZgWnoX2UDDQJ\nrW0ms8vKn1uxPOY95MqOteTZswie6wnvZjnIlroKzutoRhG5PMAyQKkMaQb8Zt4s\nlYmidOSDQVeo0FoBR825MIKtXBpkvSNApsPZ3KlIQOkDFXFRGJ+7sFwh8mvz8Fth\nG4Iae2embPwSw/B+RNfL2ugK+QKBgQDpm3iVO5xcXdoKaJ8oHFxBbCng02OLG5lG\nPhtFnCql9Nfcbj6t6HL+9M77F3IuZO2U9xuXGbXo5ZS9XSI+CI2dKUFJs9X9W5/L\naXzPLajcWZ3q3Mw9MyWLBC35Lsu91maUdaP3W5a7d+WkJYEhyixe0AlbWV/Qpgwk\njeWzLUsyIQKBgAYn3QlnyOOzUc4glsRdYkMrSq6fe79WJVwa7YfOe/OLKED9Mw+o\n5PwlswGOpBfaIKFcSlnCxN3WZmDoxP4AjUTQpA4mBgAQDRSVaGVQNUIJ7YEISL5m\n0xF0HkoJrD7xMjL4YUJ56ZjTbyos4iDclnzbDy8HCWvu+O48GB5mN7X5AoGAH5P3\nkdyz/zxkjAGmegqTYfiYFJ8elqBNcNRWZWt9zF8zisWQTXvdh59aF1ENCz5zay6Y\nGS3NjET0fUCIr3ACjJsWCzt3Er9+80U4LN1UNS0cDrJ4HVG7onYXLNbpjajcxva8\nCmTkFEVZ0n2LXiDxLIPcr+995zt66roPsc/OmWECgYEAyUQM6HHWHpT8Irz1gS40\ngr/osDfMopcOGRtT5vodsUbB4GLbzlgvrY/boRApgAL0Yii66gDJSXSnJzlhqLgp\n/hu9gKpj7yScZChreAyXaSrmptRPeL/egX2oenJ6LaMFOh69n3dXI/JQLRjHrRWS\n/WpcWGOSBROLkaBU6X2PH+w=\n-----END PRIVATE KEY-----\n",
+        "client_email": "firebase-adminsdk-ko4lk@chathistory-1e8c3.iam.gserviceaccount.com",
+        "client_id": "102039412573844995019",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ko4lk%40chathistory-1e8c3.iam.gserviceaccount.com"
+    }
+          
+}

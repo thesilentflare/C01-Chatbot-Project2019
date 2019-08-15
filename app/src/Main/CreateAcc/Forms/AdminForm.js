@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { NavLink, Redirect } from 'react-router-dom'
 import * as comp from './FormComponents'
+import './AdminForm.css'
 
 class AdminForm extends Component {
   constructor(){
     super();
     this.state = {
+      redirectLogin: false,
       formIsValid: false,
       formControls: {
-        firstname: {
+        firstName: {
           value: '',
           placeholder: 'Firstname',
           valid: false,
@@ -17,7 +20,7 @@ class AdminForm extends Component {
             minLength: 1
           }
         },
-        lastname: {
+        lastName: {
           value: '',
           placeholder: 'Lastname',
           valid: false,
@@ -47,17 +50,6 @@ class AdminForm extends Component {
           },
           touched: false
         },
-        token: {
-          value: '',
-          placeholder: 'Token',
-          valid: false,
-          validationRules: {
-            isRequired: true,
-            minLength: 10,
-            isToken: true
-          },
-          touched: false
-        }
       }
     }
   }
@@ -98,55 +90,112 @@ class AdminForm extends Component {
   	for (let formElementId in this.state.formControls) {
   	    formData[formElementId] = this.state.formControls[formElementId].value;
   	}
-      for (var data in formData){
-        alert(formData[data]); //testing each value sent
+      // for (var data in formData){
+      //   alert(formData[data]); //testing each value sent
+      // }
+
+
+      formData["admin"] = 1;
+      formData["gender"] = "m";
+      formData["reason"] = null;
+
+        var json = JSON.stringify(formData);
+        //alert("json: "+json);
+        console.log(json);
+
+
+        fetch('http://localhost:6060/signup', {
+          method: "POST",
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: json,
+        }
+        ) //mask the backend somewhere else
+        .then((res) => {
+          //alert(JSON.stringify(res));
+          if (res.message){
+            alert(res.message);
+          }
+          else{
+
+            alert("Please Login Now with your credentials");
+            this.setState({
+              redirectLogin: true,
+            })
+          }
+        })
+        .catch(function(error) {console.log(error); alert(error);});
+        // this.setState({
+        //   redirectQuery: true
+        // });
       }
-    }
+
 
   render() {
+    if (this.state.redirectLogin === true) {
+      return <Redirect to='/login' props={this.props}/>
+    }
     return (
-      <div className="formcomponents">
-        <comp.TextInput name="firstname"
-                     placeholder={this.state.formControls.firstname.placeholder}
-                     value={this.state.formControls.firstname.value}
-                     onChange={this.changeHandler}
-                     touched={this.state.formControls.firstname.touched}
-                     valid={this.state.formControls.firstname.valid}
-        />
-        <comp.TextInput name="lastname"
-                     placeholder={this.state.formControls.lastname.placeholder}
-                     value={this.state.formControls.lastname.value}
-                     onChange={this.changeHandler}
-                     touched={this.state.formControls.lastname.touched}
-                     valid={this.state.formControls.lastname.valid}
-        />
-
-        <comp.Email name="email"
-                  placeholder={this.state.formControls.email.placeholder}
-                  value={this.state.formControls.email.value}
-                  onChange={this.changeHandler}
-                  touched={this.state.formControls.email.touched}
-                  valid={this.state.formControls.email.valid}
-        />
-        <comp.Password name="password"
-                  placeholder={this.state.formControls.password.placeholder}
-                  value={this.state.formControls.password.value}
-                  onChange={this.changeHandler}
-                  touched={this.state.formControls.password.touched}
-                  valid={this.state.formControls.password.valid}
-        />
-        <comp.Password name="token"
+      <div className="admincomponents">
+        <div className="name">
+          <div className="first">
+            First Name
+            <comp.TextInput name="firstName"
+                        placeholder={this.state.formControls.firstName.placeholder}
+                        value={this.state.formControls.firstName.value}
+                        onChange={this.changeHandler}
+                        touched={this.state.formControls.firstName.touched}
+                        valid={this.state.formControls.firstName.valid}
+                        maxLength="36"
+            />
+          </div>
+          <div className="last">
+            Last Name
+            <comp.TextInput name="lastName"
+                        placeholder={this.state.formControls.lastName.placeholder}
+                        value={this.state.formControls.lastName.value}
+                        onChange={this.changeHandler}
+                        touched={this.state.formControls.lastName.touched}
+                        valid={this.state.formControls.lastName.valid}
+                        maxLength="36"
+            />
+          </div>
+        </div>
+        <div className="component">
+          Email
+          <comp.Email name="email"
+                    placeholder={this.state.formControls.email.placeholder}
+                    value={this.state.formControls.email.value}
+                    onChange={this.changeHandler}
+                    touched={this.state.formControls.email.touched}
+                    valid={this.state.formControls.email.valid}
+          />
+        </div>
+        <div className="component">
+          Password
+          <comp.Password name="password"
+                    placeholder={this.state.formControls.password.placeholder}
+                    value={this.state.formControls.password.value}
+                    onChange={this.changeHandler}
+                    touched={this.state.formControls.password.touched}
+                    valid={this.state.formControls.password.valid}
+          />
+        </div>
+        {/*  <comp.Password name="token"
                   placeholder={this.state.formControls.token.placeholder}
                   value={this.state.formControls.token.value}
                   onChange={this.changeHandler}
                   touched={this.state.formControls.token.touched}
                   valid={this.state.formControls.token.valid}
-        />
-        <button onClick={this.formSubmitHandler}
-                  disabled={! this.state.formIsValid}
-        >
-          Submit
-        </button>
+        />*/}
+        <div className="submit">
+          <button className="submitButton" onClick={this.formSubmitHandler}
+                    disabled={!this.state.formIsValid}
+          >
+            Submit
+          </button>
+        </div>
       </div>
     );
   }

@@ -8,6 +8,8 @@ import java.util.Map;
 
 import com.group8.search.indexer.Indexer;
 import com.group8.search.models.Article;
+import com.group8.search.models.ArticleDAO;
+import com.group8.search.models.ArticleDAOImpl;
 import com.group8.search.models.QueryRequest;
 
 import java.io.IOException;
@@ -94,7 +96,7 @@ public class QueryController {
          keywordsRes = this.parseResult(resDocByKeywords);
 
          // Check if the search via keywords got a result
-         if (keywordsRes.isEmpty()) {
+         if (keywordsRes == null) {
             // Then search the text of all Article to get a result
             TopDocs resDocByText = this.searchByText(req.getKeywords());
             textRes = this.parseResult(resDocByText);
@@ -104,6 +106,9 @@ public class QueryController {
          }
          // Log result
          System.out.print(res);
+         res.incrementFrequency();
+         ArticleDAO doa = new ArticleDAOImpl();
+         doa.update(res);
 
          /*if (textRes.equals(keywordsRes)) {
             res = textRes;
@@ -175,6 +180,7 @@ public class QueryController {
                result.convertToArticle(doc);
             }
          } catch(Exception e) {
+            e.printStackTrace();
             result = null;
          }
          System.out.println(result);

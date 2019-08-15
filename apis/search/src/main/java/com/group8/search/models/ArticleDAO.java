@@ -38,6 +38,15 @@ public interface ArticleDAO {
     public void delete(String name);
 
     /**
+     * Check if the an entry with the given name of an Article exists
+     * in the database
+     * @param name String - name of the Article to check for
+     * @return boolean - true if there is an article that exist the
+     *                   given name, otherwise false
+     */
+    public boolean doesExist(String name);
+
+    /**
      * Get the result set meta data about this related Article table
      * @return ResultSetMetaData
      */

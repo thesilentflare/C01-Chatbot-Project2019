@@ -1,0 +1,85 @@
+.wrapper{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.queryarea{
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  background-color: gray;
+  margin: 0;
+  padding: 0;
+}
+.content{
+  height: 80%;
+  display: flex;
+}
+.inner{
+  display: block;
+  position: relative;
+  height: 10vh;
+}
+.searchbar{
+  margin: 0;
+  display: inline-flex;
+  padding: 0 10em;
+  height: 100%;
+}
+.message-area{
+  padding: 2em 3em;
+  max-height: 100%;
+  height: 81vh;
+  overflow: scroll;
+}
+.message-area::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+.chatcomp{
+  width: 80%;
+}
+.send{
+  padding: 0;
+  margin: 0;
+  border: none;
+  height: 100%;
+  background: url("/send.png") 50px 50px no-repeat;
+
+}
+.buttonImage{
+  width: 80px;
+
+}
+
+.searchcomps{
+  display: flex;
+  padding: 1em 3em;
+  position: relative;
+}
+.search{
+  width: 30em;
+  height: 100%;
+  padding: 1em 1em;
+  border-radius: 100px;
+}
+.form-group{
+  margin: 0;
+}
+.topsearchcomp{
+  background-color: #295070;
+  width: 20%;
+  height: 115%;
+  overflow: hidden;
+}
+.topsearchelements{
+  overflow: scroll;
+  height: 100%;
+}
+.topsearchelements::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}

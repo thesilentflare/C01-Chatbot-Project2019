@@ -43,7 +43,7 @@ public class ArticleDAOImpl implements ArticleDAO {
      */
     @Transactional(readOnly=true)
     public List<Article> findAll() {
-        String QUERY = "SELECT name, url, keywords, text FROM article";
+        String QUERY = "SELECT name, url, keywords, text, frequency FROM article";
         RowMapper<Article> rowMapper = new BeanPropertyRowMapper<Article>(Article.class);
         List<Article> articles = this.jdbcTemplate.query(QUERY, rowMapper);
         return articles;
@@ -56,7 +56,7 @@ public class ArticleDAOImpl implements ArticleDAO {
      */
     @Transactional(readOnly=true)
     public Article find(String name) {
-        String QUERY = "SELECT name, url, keywords, text FROM article WHERE name = ?";
+        String QUERY = "SELECT name, url, keywords, text, frequency FROM article WHERE name = ?";
         RowMapper<Article> rowMapper = new BeanPropertyRowMapper<Article>(Article.class);
         Article article = jdbcTemplate.queryForObject(QUERY, rowMapper, name);
         return article;
@@ -67,8 +67,8 @@ public class ArticleDAOImpl implements ArticleDAO {
      * @param article Article - the Article to be entered in the database
      */
     public void create(Article article) {
-        String QUERY = "INSERT INTO article (name, url, keywords, text) values (?, ?, ?, ?)";
-        this.jdbcTemplate.update(QUERY, article.getName(), article.getUrl(), article.getKeywords(), article.getText());
+        String QUERY = "INSERT INTO article (name, url, keywords, text, frequency) values (?, ?, ?, ?, ?)";
+        this.jdbcTemplate.update(QUERY, article.getName(), article.getUrl(), article.getKeywords(), article.getText(), article.getFrequency());
     }
 
     /**
@@ -76,8 +76,8 @@ public class ArticleDAOImpl implements ArticleDAO {
      * @param article Article - the Article information to be updated
      */
     public void update(Article article) {
-        String QUERY = "UPDATE article SET url, keywords, text WHERE name=?";
-        this.jdbcTemplate.update(QUERY, article.getUrl(), article.getKeywords(), article.getText());
+        String QUERY = "UPDATE article SET url = ?, keywords = ?, text = ?, frequency = ? WHERE name=?";
+        this.jdbcTemplate.update(QUERY, article.getUrl(), article.getKeywords(), article.getText(), article.getFrequency(), article.getName());
     }
 
     /**
@@ -112,14 +112,13 @@ public class ArticleDAOImpl implements ArticleDAO {
      */
     public ResultSetMetaData getMetaData() {
         String QUERY = "SELECT * FROM article";
-        return jdbcTemplate.query(QUERY.toString(), new ResultSetExtractor<ResultSetMetaData>() {
+        return jdbcTemplate.query(QUERY, new ResultSetExtractor<ResultSetMetaData>() {
 
             public ResultSetMetaData extractData(ResultSet arg0) throws SQLException, DataAccessException {
                 ResultSetMetaData rsmd = (ResultSetMetaData) arg0.getMetaData();
                 return rsmd;
             }
 
-            
         });
     }
 

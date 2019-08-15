@@ -1,0 +1,15 @@
+{
+    "local": {
+        "host": "localhost",
+        "port": 5000
+    },
+    "assistant": {
+        "apiKey": "QQrAYNYF3Ul6cVxmdnS1xJKf5IxwJEndCBpkvizHINRA",
+        "assistantId": "f16be034-720b-46f2-9333-9052d93ec5d2",
+        "url": "https://gateway.watsonplatform.net/assistant/api"
+    },
+    "discovery":{
+        "apiKey": "aa9peVXcj_hlUGNSv7pD2G6FUfhn0Gui5RX1RkHyNpbO",
+        "url": "https://gateway.watsonplatform.net/discovery/api"
+    }
+}

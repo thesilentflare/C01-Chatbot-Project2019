@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
 import * as form from './Forms'
 
 class CreateAcc extends Component {
@@ -8,8 +8,10 @@ class CreateAcc extends Component {
     this.state = {
       acctype: "User",
       showuser: true,
-      showadmin: false
+      showadmin: false,
+      redirectMain: false,
     }
+    // this.redirecting = this.redirecting.bind(this);
   }
 
   changeForm = event =>{
@@ -31,12 +33,22 @@ class CreateAcc extends Component {
     }
   }
 
+  redirecting = () => {
+    this.setState({ redirectMain: true
+    });
+  }
 
-
+  // Display the account registration form based on account type selected: User/Admin
   render() {
+    if (this.state.redirectMain === true){
+      return <Redirect to='/' props={this.props}/>
+    }
     return (
       <div className="mainpage">
         Create Account Page
+        <div className="back">
+
+        </div>
 
         <div className="acctype">
           <text>Select Your Account Type: </text>
@@ -47,10 +59,13 @@ class CreateAcc extends Component {
           </select>
         </div>
 
-
+        
         <div className="form">
-          { this.state.showuser ? <form.UserForm /> : null }
-          { this.state.showadmin ? <form.AdminForm /> : null }
+          { this.state.showuser ? <form.UserForm props={this.state}/> : null }
+          { this.state.showadmin ? <form.AdminForm props={this.state}/> : null }
+        </div>
+        <div className="back">
+          <button onClick={()=>this.redirecting()}>Back to Main Page</button>
         </div>
       </div>
     );

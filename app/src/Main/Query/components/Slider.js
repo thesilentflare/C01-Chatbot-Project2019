@@ -11,7 +11,7 @@ const Slider = props => {
 
     return (
         <div className="form-group">
-        <div className="text">Show/Hide IBM Results</div>
+        <div className="text">Use IBM Watson</div>
           <label class="switch">
             <input type="checkbox" className={formControl} {...props}/>
             <span className="slider round"/>

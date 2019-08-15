@@ -12,44 +12,48 @@ class LoginController {
         this.user = null;
     }
 
+    /**
+     * Authenticate the credentias of this login controller
+     */
     authenticate() {
         if (this.email != null && this.password != null) {
             // Get user hashed and salted credentials from db's users table
             var users = this.getCredentials();
-            users.then((users, err) => {
-                //this.user = users[0].dataValues;
-                console.log(users[0].dataValues);
-                //match = bcrypt.compareSync(this.password, this.user.password);*/
-                var user = users[0].dataValues;
-                //match = bcrypt.compareSync(this.password, this.user.password);
-                console.log(user.password);
-                // compare the credentials
-                const match = bcrypt.compareSync(this.password, user.password);
-                
-                // Verify login crednetials are valid
-                if (match) {
-                    console.log("Credentials match!");
-                    var token = jwt.sign({ email: this.email }, config.secret, { expiresIn: '1h' });
-                    this.res.status(200).json({ token: token});
 
-                    console.log(token);
+            // very password and send token response
+            users.then((user, err) => {
+                if (user != null) {
+                    console.log(user.dataValues);
+                    // Compare the the given password to the password of user in db 
+                    const match = bcrypt.compareSync(this.password, user.dataValues.password);
+                    
+                    // Verify login crednetials are valid
+                    if (match) {
+                        console.log("Credentials match!");
+                        var token = jwt.sign({ email: this.email }, config.secret, { expiresIn: '10h' });
+                        this.res.status(200).json({ token: token});
+                    } else {
+                        console.log("Credentials do not match!");
+                        this.res.status(403).json({message: "Incorrect password"});
+                    }
                 } else {
-                    console.log("Credentials do not match!");
+                    this.res.status(404).json({message: "Incorrect email"});
                 }
                 
             });
+        } else {
+            this.res.status(400).json({message: "Email or password cannot be null"});
         }
     }
 
+    /**
+     * Find the user in db related to this email
+     * @return Promise - user related to this email
+     */
     getCredentials() {
-       var users = User.findAll({
-            where: {
-                email: this.email
-            },
-            limit: 1
-        });
+       var user = User.findByPk(this.email);
 
-        return users
+        return user
     }
 }
 

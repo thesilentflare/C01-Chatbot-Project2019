@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.c01.team8</groupId>
+  <artifactId>SeleniumTest</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Selenium Test</name>
+  <description>This contains all the selenium tests</description>
+  <repositories>
+    <repository>
+        <id>maven-restlet</id>
+        <name>Selenium Repository</name>
+        <url>http://repo1.maven.org/maven2/org/seleniumhq/selenium/</url>
+    </repository>
+</repositories>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.seleniumhq.selenium</groupId>
+  		<artifactId>selenium-java</artifactId>
+  		<version>3.9.0</version>
+  	</dependency>
+
+
+  	  	<dependency>
+  		<groupId>org.seleniumhq.selenium</groupId>
+  		<artifactId>selenium-chrome-driver</artifactId>
+  		<version>3.9.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.seleniumhq.selenium</groupId>
+  		<artifactId>selenium-firefox-driver</artifactId>
+  		<version>3.9.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.11</version>
+  		<scope>test</scope>
+  	</dependency>
+  </dependencies>
+</project>
